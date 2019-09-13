@@ -15,7 +15,7 @@ namespace Ex1
             EndMensage();
         }
 
-        public static void WelcomeMensage()
+        private static void WelcomeMensage()
         {
             Console.WriteLine("==============================================");
             Console.WriteLine("============= SEJA BEM VINDO !!===============");
