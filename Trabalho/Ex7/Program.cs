@@ -12,14 +12,14 @@ namespace Ex7
         {
             Console.WriteLine("Informe um texto:");
             var texto = Console.ReadLine();
-            var qntTexto = texto.Length;
+            var qntTexto = texto.Length - 1;
             var a = 0;
             var e = 0;
             var i = 0;
             var o = 0;
             var u = 0;
 
-            for (int j = 0; j < qntTexto - 1; j++)
+            for (int j = 0; j < qntTexto; j++)
             {
                 if (texto[j].ToString() == "a")
                     a++;
