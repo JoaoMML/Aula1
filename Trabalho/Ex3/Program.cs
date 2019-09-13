@@ -16,19 +16,11 @@ namespace AppCicle
 
             EndMensage();
         }
-        /// <summary>
-        /// Metodo para perguntar o nome.
-        /// </summary>
-        /// <returns></returns>
         private static string AskToName()
         {
             Console.WriteLine("Informe o seu nome:");
             return Console.ReadLine();
         }
-        /// <summary>
-        /// Pergunta a idade do usuario.
-        /// </summary>
-        /// <returns></returns>
         private static void AskToAge(string nome)
         {
             Console.WriteLine("\r\n Informe a sua idade: \r\n");
@@ -38,9 +30,6 @@ namespace AppCicle
                 Console.WriteLine($"Parabéns {nome} você já esta na fase adulta.");
             else Console.WriteLine($"Calma {nome} tudo ao seu tempo logo você terá 18 anos de idade.");
         }
-        /// <summary>
-        /// Metodo para mostrar o texto inicial do sistema alone
-        /// </summary>
         private static void ShowInitAppText()
         {
             Console.WriteLine("============================================");
