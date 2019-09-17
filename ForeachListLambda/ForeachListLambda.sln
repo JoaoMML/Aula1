@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeachListLambda", "ForeachListLambda\ForeachListLambda.csproj", "{0D1EF0C0-A940-4E9E-AF20-A7C201ECAE9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetodosPublicos", "MetodosPublicos\MetodosPublicos.csproj", "{0E5A9595-E71D-4B1D-9F8C-F40B8C58C530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversorMonetario", "ConversorMonetario\ConversorMonetario.csproj", "{0B4E6F58-B8E4-4F33-A67B-2B31E0B94131}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0D1EF0C0-A940-4E9E-AF20-A7C201ECAE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D1EF0C0-A940-4E9E-AF20-A7C201ECAE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D1EF0C0-A940-4E9E-AF20-A7C201ECAE9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E5A9595-E71D-4B1D-9F8C-F40B8C58C530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5A9595-E71D-4B1D-9F8C-F40B8C58C530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5A9595-E71D-4B1D-9F8C-F40B8C58C530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E5A9595-E71D-4B1D-9F8C-F40B8C58C530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4E6F58-B8E4-4F33-A67B-2B31E0B94131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4E6F58-B8E4-4F33-A67B-2B31E0B94131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4E6F58-B8E4-4F33-A67B-2B31E0B94131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4E6F58-B8E4-4F33-A67B-2B31E0B94131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
