@@ -12,6 +12,9 @@ namespace CadPessoas
         static List<People> listaPessoa = new List<People>();
         static void Main(string[] args)
         {
+            var teste = 10.50;
+            Console.WriteLine(teste);
+
             Menu();
         }
         public static void Menu()
