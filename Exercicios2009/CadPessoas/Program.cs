@@ -47,6 +47,7 @@ namespace CadPessoas
                     return;
                 default:
                     Console.WriteLine("Opção inválida!");
+                    Console.ReadKey();
                     break;
             }
         }
