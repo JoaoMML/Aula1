@@ -9,6 +9,22 @@ namespace LocacaoBiblioteca.Controller
 {
     public class UsuarioController
     {
+        public UsuarioController()
+        {
+            Usuario = new List<Usuario>
+            {
+                new Usuario()
+                {
+                     Login ="Admin",Senha="Admin"
+                },
+                new Usuario()
+                {
+                    Login ="Teste",Senha="123"
+                }
+            };
+        }
+
+        public List<Usuario> Usuario { get; set; }
         /// <summary>
         /// Metodo que realiza o login dentro do nosso sistema
         /// Para realizar o login padrão use:
@@ -20,13 +36,14 @@ namespace LocacaoBiblioteca.Controller
         /// <returns>Retorna verdadeiro se existir um usuario com login e senha</returns>
         public bool LoginSistema(Usuario usuario)
         {
-            if (usuario.Login == "Admin" && usuario.Senha == "Admin")
-            {
-                return true;
-            }
-            {
-                return false;
-            }
+            return Usuario.Exists(i => i.Login == usuario.Login && i.Senha == usuario.Senha);
+            //if (usuario.Login == "Admin" && usuario.Senha == "Admin")
+            //{
+            //    return true;
+            //}
+            //{
+            //    return false;
+            //}
         }
     }
 }
