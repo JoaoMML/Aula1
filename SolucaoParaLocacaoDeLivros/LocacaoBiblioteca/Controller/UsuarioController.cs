@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocacaoBiblioteca.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,9 @@ namespace LocacaoBiblioteca.Controller
         /// <param name="login">Login do usuário dentro do sistema</param>
         /// <param name="senha">Senha do usuário dentro do sistema</param>
         /// <returns>Retorna verdadeiro se existir um usuario com login e senha</returns>
-        public bool LoginSistema(string login, string senha)
+        public bool LoginSistema(Usuario usuario)
         {
-            if (login == "Admin" && senha == "Admin")
+            if (usuario.Login == "Admin" && usuario.Senha == "Admin")
             {
                 return true;
             }

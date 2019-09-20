@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LocacaoBiblioteca.Controller;
+using LocacaoBiblioteca.Model;
 
 namespace InterfaceBiblioteca
 {
@@ -21,7 +22,7 @@ namespace InterfaceBiblioteca
         /// Verifica o usuario e senha e retorna um bollean para usar no ControladorDeFluxo 
         /// </summary>
         /// <returns></returns>
-        private static bool ValidaAcesso()
+        private static bool ValidaALogin()
         {
             Console.WriteLine("Login:");
             var login = Console.ReadLine();
@@ -31,7 +32,11 @@ namespace InterfaceBiblioteca
 
             UsuarioController usuarioController = new UsuarioController();
 
-            return usuarioController.LoginSistema(login, senha);
+            return usuarioController.LoginSistema(new Usuario()
+            {
+                Login = login,
+                Senha = senha
+            });
 
             //{
             //    Console.Clear();
@@ -53,7 +58,7 @@ namespace InterfaceBiblioteca
         /// </summary>
         private static void ControladorDeFluxo()
         {
-            while (!ValidaAcesso())
+            while (!ValidaALogin())
             {
                 Console.Clear();
                 Console.WriteLine("Login ou senha inválidos!");
