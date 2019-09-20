@@ -15,7 +15,7 @@ namespace InterfaceBiblioteca
         static void Main(string[] args)
         {
             BoasVindas();
-            // ControladorDeFluxo();
+            ControladorDeFluxo();
             var escolhaMenu = int.MinValue;
             while (escolhaMenu != 0)
             {
@@ -26,6 +26,9 @@ namespace InterfaceBiblioteca
                         break;
                     case 2:
                         MostrarLivros();
+                        break;
+                    case 3:
+                        ControladorDeFluxo();
                         break;
                     case 0:
                         Console.Clear();
@@ -135,6 +138,7 @@ namespace InterfaceBiblioteca
             Console.WriteLine("** Escolha a opção desejada **");
             Console.WriteLine("1 - Listar Usuarios");
             Console.WriteLine("2 - Livros");
+            Console.WriteLine("3 - Trocar Usuário");
             Console.WriteLine("0 - Sair ");
             return int.Parse(Console.ReadKey(true).KeyChar.ToString());
         }
