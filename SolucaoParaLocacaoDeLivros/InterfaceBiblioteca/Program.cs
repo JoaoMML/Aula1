@@ -10,6 +10,7 @@ namespace InterfaceBiblioteca
 {
     class Program
     {
+        //Instanciados "Carregando para memoria" os controladores..
         static LivrosController listLivros = new LivrosController();
         static UsuarioController listUsuarios = new UsuarioController();
         static void Main(string[] args)
@@ -28,7 +29,14 @@ namespace InterfaceBiblioteca
                         MostrarLivros();
                         break;
                     case 3:
+                        Console.Clear();
                         ControladorDeFluxo();
+                        break;
+                    case 4:
+                        AdicionaLivro();
+                        break;
+                    case 5:
+                        AdicionaUsuario();
                         break;
                     case 0:
                         Console.Clear();
@@ -41,6 +49,47 @@ namespace InterfaceBiblioteca
                 }
                 Console.ReadKey();
             }
+        }
+        private static void AdicionaUsuario()
+        {
+            var senha = string.Empty;
+            var repitaSenha = string.Empty;
+            Console.Clear();
+            Console.WriteLine("Informe o nome de Login:");
+            var login = Console.ReadLine();
+            Console.WriteLine("Informe a senha:");
+            senha = Console.ReadLine();
+            Console.WriteLine("Repita a senha:");
+            repitaSenha = Console.ReadLine();
+
+            if (listUsuarios.ValidaSenha(senha, repitaSenha))
+            {
+
+
+                listUsuarios.AdicionaUsuario(new Usuario()
+                {
+                    Login = login,
+                    Senha = senha
+                });
+                Console.WriteLine("Usuario Cadastrado com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("As credenciais não conferem!!");
+            }
+        }
+        private static void AdicionaLivro()
+        {
+            Console.Clear();
+            Console.WriteLine("Informe o nome do livro para cadastrar:");
+            var nomeDoLivro = Console.ReadLine();
+            listLivros.AdicionarLivro(new Livro()
+            {
+                Nome = nomeDoLivro
+            });
+            Console.WriteLine("Livro adicionado com sucesso!");
+
+
         }
 
         private static void MostrarUsuarios()
@@ -94,26 +143,11 @@ namespace InterfaceBiblioteca
             Console.WriteLine("Senha:");
             var senha = Console.ReadLine();
 
-            UsuarioController usuarioController = new UsuarioController();
-
-            return usuarioController.LoginSistema(new Usuario()
+            return listUsuarios.LoginSistema(new Usuario()
             {
                 Login = login,
                 Senha = senha
             });
-
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine($"Seja bem vindo {login}!");
-            //    MenuSistema();
-            //}
-            //else
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine("O usuario ou senha não existe, tente novamente!");
-            //    ValidaAcesso();
-            //}
-
 
         }
 
@@ -122,6 +156,7 @@ namespace InterfaceBiblioteca
         /// </summary>
         private static void ControladorDeFluxo()
         {
+
             while (!ValidaALogin())
             {
                 Console.Clear();
@@ -139,6 +174,8 @@ namespace InterfaceBiblioteca
             Console.WriteLine("1 - Listar Usuarios");
             Console.WriteLine("2 - Livros");
             Console.WriteLine("3 - Trocar Usuário");
+            Console.WriteLine("4 - Cadastrar novo livro");
+            Console.WriteLine("5 - Cadastrar novo usuario");
             Console.WriteLine("0 - Sair ");
             return int.Parse(Console.ReadKey(true).KeyChar.ToString());
         }

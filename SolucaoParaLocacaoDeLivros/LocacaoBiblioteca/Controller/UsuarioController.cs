@@ -9,17 +9,22 @@ namespace LocacaoBiblioteca.Controller
 {
     public class UsuarioController
     {
+        private int idContador = 0;
         public UsuarioController()
         {
             Usuario = new List<Usuario>
             {
                 new Usuario()
                 {
-                     Login ="Admin",Senha="Admin"
+                    Id = idContador++,
+                    Login = "Admin",
+                    Senha = "Admin"
                 },
                 new Usuario()
                 {
-                    Login ="Teste",Senha="123"
+                    Id = idContador++,
+                    Login = "Teste",
+                    Senha = "123"
                 }
             };
         }
@@ -44,6 +49,21 @@ namespace LocacaoBiblioteca.Controller
             //{
             //    return false;
             //}
+        }
+
+        public bool ValidaSenha(string senha, string repitaSenha)
+        {
+            if (senha != repitaSenha)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void AdicionaUsuario(Usuario parametroUsuario)
+        {
+            parametroUsuario.Id = idContador++;
+            Usuario.Add(parametroUsuario);
         }
     }
 }
