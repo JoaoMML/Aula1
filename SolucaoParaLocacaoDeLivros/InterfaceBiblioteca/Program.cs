@@ -38,6 +38,9 @@ namespace InterfaceBiblioteca
                     case 5:
                         AdicionaUsuario();
                         break;
+                    case 6:
+                        RemoveUsuarioPorId();
+                        break;
                     case 0:
                         Console.Clear();
                         Console.WriteLine("Até a proxima..");
@@ -49,6 +52,15 @@ namespace InterfaceBiblioteca
                 }
                 Console.ReadKey();
             }
+        }
+        private static void RemoveUsuarioPorId()
+        {
+            Console.WriteLine("Remover usuario por id");
+            MostrarUsuarios();
+            Console.WriteLine("Informe o id do usuario que deseja remover..");
+            var usuarioId = int.Parse(Console.ReadLine());
+
+            listUsuarios.RemoverUsuario(usuarioId);
         }
         private static void AdicionaUsuario()
         {
@@ -96,7 +108,7 @@ namespace InterfaceBiblioteca
         {
             Console.Clear();
             Console.WriteLine("\r ********** Lista de usuarios! ****************** \n ");
-            listUsuarios.Usuario.ForEach(i => Console.WriteLine($" Login: {i.Login }\n Senha: {i.Senha} \n ----------------------"));
+            listUsuarios.RetornaListaUsuarios().ForEach(i => Console.WriteLine($" Login: {i.Login }\n Senha: {i.Senha} \n ID: {i.Id} \n ----------------------"));
         }
 
         private static void MostrarLivros()
@@ -176,6 +188,7 @@ namespace InterfaceBiblioteca
             Console.WriteLine("3 - Trocar Usuário");
             Console.WriteLine("4 - Cadastrar novo livro");
             Console.WriteLine("5 - Cadastrar novo usuario");
+            Console.WriteLine("6 - Remover um usuario");
             Console.WriteLine("0 - Sair ");
             return int.Parse(Console.ReadKey(true).KeyChar.ToString());
         }

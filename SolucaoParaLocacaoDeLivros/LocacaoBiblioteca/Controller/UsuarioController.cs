@@ -12,7 +12,7 @@ namespace LocacaoBiblioteca.Controller
         private int idContador = 0;
         public UsuarioController()
         {
-            Usuario = new List<Usuario>
+            ListaUsuario = new List<Usuario>
             {
                 new Usuario()
                 {
@@ -29,7 +29,7 @@ namespace LocacaoBiblioteca.Controller
             };
         }
 
-        public List<Usuario> Usuario { get; set; }
+        private List<Usuario> ListaUsuario { get; set; }
         /// <summary>
         /// Metodo que realiza o login dentro do nosso sistema
         /// Para realizar o login padrão use:
@@ -41,14 +41,7 @@ namespace LocacaoBiblioteca.Controller
         /// <returns>Retorna verdadeiro se existir um usuario com login e senha</returns>
         public bool LoginSistema(Usuario usuario)
         {
-            return Usuario.Exists(i => i.Login == usuario.Login && i.Senha == usuario.Senha);
-            //if (usuario.Login == "Admin" && usuario.Senha == "Admin")
-            //{
-            //    return true;
-            //}
-            //{
-            //    return false;
-            //}
+            return ListaUsuario.Exists(i => i.Login == usuario.Login && i.Senha == usuario.Senha);
         }
 
         public bool ValidaSenha(string senha, string repitaSenha)
@@ -63,7 +56,20 @@ namespace LocacaoBiblioteca.Controller
         public void AdicionaUsuario(Usuario parametroUsuario)
         {
             parametroUsuario.Id = idContador++;
-            Usuario.Add(parametroUsuario);
+            ListaUsuario.Add(parametroUsuario);
+        }
+
+        public void RemoverUsuario(int identificadorId)
+        {
+            // Usamos o firstOrDefault para localizar o usuario dentro da lista que tem a seguinte condição ( x.id == id )
+            ListaUsuario.FirstOrDefault(x => x.Id == identificadorId).Ativo = false;
+            Console.WriteLine("Usuário desativado com sucesso!");
+            Console.ReadKey();
+        }
+
+        public List<Usuario> RetornaListaUsuarios()
+        {
+            return ListaUsuario.Where(x => x.Ativo).ToList<Usuario>();
         }
     }
 }
