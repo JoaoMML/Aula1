@@ -9,28 +9,31 @@ namespace LocacaoBiblioteca.Controller
 {
     public class LivrosController
     {
+        private int idContador = 0;
         public LivrosController()
         {
-            Livros = new List<Livro>
+            ListLivros = new List<Livro>
             {
                 new Livro()
-                {
+                {   Id = idContador++,
                     Nome = "Capitães de Areia",
                 },
 
                 new Livro()
                 {
+                    Id = idContador++,
                     Nome = "Don Quixote"
                 },
 
                 new Livro()
                 {
+                    Id = idContador++,
                     Nome = "Vidas Secas"
                 }
             };
 
         }
-        public List<Livro> Livros { get; set; }
+        private List<Livro> ListLivros { get; set; }
 
         /// <summary>
         /// Metodo que adiciona o livro em nossa lista já "instanciada"
@@ -38,7 +41,20 @@ namespace LocacaoBiblioteca.Controller
         /// <param name="parametroLivro"></param>
         public void AdicionarLivro(Livro parametroLivro)
         {
-            Livros.Add(parametroLivro);
+            parametroLivro.Id = idContador++;
+            ListLivros.Add(parametroLivro);
+        }
+
+        public void RemoverLivros(int identificadorId)
+        {
+            ListLivros.FirstOrDefault(x => x.Id == identificadorId).Ativo = false;
+            Console.WriteLine("Livro removido com sucesso!");
+            Console.ReadKey();
+        }
+
+        public List<Livro> RetornaListaLivros()
+        {
+            return ListLivros.Where(x => x.Ativo == true).ToList<Livro>();
         }
     }
 }

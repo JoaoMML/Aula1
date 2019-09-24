@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +41,9 @@ namespace InterfaceBiblioteca
                     case 6:
                         RemoveUsuarioPorId();
                         break;
+                    case 7:
+                        RemoverLivrosPorId();
+                        break;
                     case 0:
                         Console.Clear();
                         Console.WriteLine("Até a proxima..");
@@ -61,6 +64,15 @@ namespace InterfaceBiblioteca
             var usuarioId = int.Parse(Console.ReadLine());
 
             listUsuarios.RemoverUsuario(usuarioId);
+        }
+
+        private static void RemoverLivrosPorId()
+        {
+            Console.WriteLine("Remover livro por id:");
+            MostrarLivros();
+            Console.WriteLine("Informe o id do livro que deseja remover!");
+            var livroId = int.Parse(Console.ReadLine());
+            listLivros.RemoverLivros(livroId);
         }
         private static void AdicionaUsuario()
         {
@@ -138,7 +150,7 @@ namespace InterfaceBiblioteca
 
 
             Console.WriteLine("************************************* LER DEPOIS ************************************");
-            listLivros.Livros.ForEach(i => Console.WriteLine($"Titulo do livro - {i.Nome}, foi adicionado na biblioteca em {i.DataCriacao.ToString("dd/MMM/yyyy")}"));
+            listLivros.RetornaListaLivros().ForEach(i => Console.WriteLine($"ID: {i.Id} = Titulo do livro - {i.Nome}, foi adicionado na biblioteca em {i.DataCriacao.ToString("dd/MMM/yyyy")}"));
             Console.WriteLine("************************************* FIM LISTA  *************************************");
             Console.WriteLine($" \r\n Atualmente estou lendo : { livro.Nome}");
         }

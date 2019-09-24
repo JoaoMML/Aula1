@@ -12,21 +12,7 @@ namespace LocacaoBiblioteca.Controller
         private int idContador = 0;
         public UsuarioController()
         {
-            ListaUsuario = new List<Usuario>
-            {
-                new Usuario()
-                {
-                    Id = idContador++,
-                    Login = "Admin",
-                    Senha = "Admin"
-                },
-                new Usuario()
-                {
-                    Id = idContador++,
-                    Login = "Teste",
-                    Senha = "123"
-                }
-            };
+            
         }
 
         private List<Usuario> ListaUsuario { get; set; }
