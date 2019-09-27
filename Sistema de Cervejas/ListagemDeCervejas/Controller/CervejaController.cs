@@ -16,9 +16,10 @@ namespace ListagemDeCervejas.Controller
             return sistemaCervejaContext.ListaCervejasPublicas;
         }
 
-        public void AddCervejas(string nome, int litrosEmMl, double percenteAlcool, double valor)
+        public void AddCervejas(Cerveja cerveja)
         {
-            sistemaCervejaContext.listCerveja.Add(new Cerveja() { Id = 10, Nome = nome, LitrosEmMl = litrosEmMl, PercentAlcoolPerMl = percenteAlcool, Valor = valor });
+            cerveja.Id = sistemaCervejaContext.IdContador++;
+            sistemaCervejaContext.listCerveja.Add(cerveja);
         }
 
     }

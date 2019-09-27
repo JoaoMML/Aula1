@@ -8,6 +8,7 @@ namespace ListagemDeCervejas.Model
 {
     public class SistemaCervejaContext
     {
+        public int IdContador = 0;
         public List<Cerveja> listCerveja = new List<Cerveja>();
 
         public SistemaCervejaContext()
@@ -19,7 +20,7 @@ namespace ListagemDeCervejas.Model
             // Adicionar dados
             listCerveja.Add(new Cerveja()
             {
-                Id = 1,
+                Id = IdContador++,
                 Nome = "Skol Puro Malte",
                 LitrosEmMl = 350,
                 PercentAlcoolPerMl = 4.4,
@@ -28,15 +29,15 @@ namespace ListagemDeCervejas.Model
             });
             listCerveja.Add(new Cerveja()
             {
-                Id = 2,
+                Id = IdContador++,
                 Nome = "Budweiser",
                 LitrosEmMl = 330,
                 PercentAlcoolPerMl = 5.0,
                 Valor = 4.19
             });
-            listCerveja.Add(new Cerveja() { Id = 3, Nome = "Original", LitrosEmMl = 600, PercentAlcoolPerMl = 5, Valor = 5.50 });
-            listCerveja.Add(new Cerveja() { Id = 4, Nome = "Corona", LitrosEmMl = 355, PercentAlcoolPerMl = 4.5, Valor = 5 });
-            listCerveja.Add(new Cerveja() { Id = 5, Nome = "Estella Artois", LitrosEmMl = 275, PercentAlcoolPerMl = 5.2, Valor = 3 });
+            listCerveja.Add(new Cerveja() { Id = IdContador++, Nome = "Original", LitrosEmMl = 600, PercentAlcoolPerMl = 5, Valor = 5.50 });
+            listCerveja.Add(new Cerveja() { Id = IdContador++, Nome = "Corona", LitrosEmMl = 355, PercentAlcoolPerMl = 4.5, Valor = 5 });
+            listCerveja.Add(new Cerveja() { Id = IdContador++, Nome = "Estella Artois", LitrosEmMl = 275, PercentAlcoolPerMl = 5.2, Valor = 3 });
         }
 
         // Propriedade que chama a lista ser filtros

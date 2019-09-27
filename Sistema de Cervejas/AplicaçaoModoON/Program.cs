@@ -1,4 +1,5 @@
 ﻿using ListagemDeCervejas.Controller;
+using ListagemDeCervejas.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,14 @@ namespace AplicaçaoModoON
                 Console.WriteLine("Informe o valor:");
                 var valor = double.Parse(Console.ReadLine());
 
-                cervejaController.AddCervejas(nome, litrosEmMl, percenteAlcool, valor);
+                cervejaController.AddCervejas(new Cerveja()
+                {
+                    Id = cervejaController.GetCervejas().Count + 1,
+                    Nome = nome,
+                    LitrosEmMl = litrosEmMl,
+                    PercentAlcoolPerMl = percenteAlcool,
+                    Valor = valor
+                });
             }
             catch (Exception)
             {
