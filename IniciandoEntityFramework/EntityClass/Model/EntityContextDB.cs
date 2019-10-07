@@ -12,5 +12,5 @@ namespace EntityClass.Model
     {
         // DbSet é uma palavra reservad
         public DbSet<Pessoa> ListaDePessoas { get; set; }
-    }
+    }   
 }
