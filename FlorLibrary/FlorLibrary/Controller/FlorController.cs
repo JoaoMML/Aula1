@@ -34,13 +34,10 @@ namespace FlorLibrary.Controller
         public bool Inserir(Flor item)
         {
             //Fazemos as validacoes ao contrario pois se algum item não corresponder ao necessário ele já sai sem testar os proximos!
-            if (string.IsNullOrWhiteSpace(item.Marca))
+            if (string.IsNullOrWhiteSpace(item.Nome))
                 return false;
-            if (string.IsNullOrWhiteSpace(item.Modelo))
+            if (item.Quantidade < 0)
                 return false;
-            if (item.Preco <= 0)
-                return false;
-
             // Se passar todos ele adiciona no comando logo abaixo!
             contextDb.Flores.Add(item);
             contextDb.SaveChanges();
