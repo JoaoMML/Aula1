@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiIMC", "WebApiIMC\WebApiIMC.csproj", "{17E8B684-3D31-45C8-A3FB-9CE03050412B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E8B684-3D31-45C8-A3FB-9CE03050412B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E8B684-3D31-45C8-A3FB-9CE03050412B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E8B684-3D31-45C8-A3FB-9CE03050412B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E8B684-3D31-45C8-A3FB-9CE03050412B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2392E1F2-E81C-43EB-8990-653B97539E1A}
+	EndGlobalSection
+EndGlobal
